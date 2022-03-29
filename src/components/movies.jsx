@@ -8,11 +8,8 @@ class Movies extends Component {
       };
     
       handleDelete = (movie) => {
-        let id = movie._id;
-        let { movies } = this.state;
-        let newMovies = movies.filter((movie) => movie._id !== id);
-        console.log(newMovies);
-        this.setState({ movies: newMovies });
+        let movies = this.state.movies.filter((m) => m._id !== movie._id);
+        this.setState({ movies });
       };
     
     render() { 
@@ -31,6 +28,7 @@ class Movies extends Component {
                     <th>Genre</th>
                     <th>stock</th>
                     <th>rate</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
